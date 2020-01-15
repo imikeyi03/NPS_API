@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NPS API</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Vacation Planner</h1>
+    </header>
+
+    <main>
+      
+      <form id="js-form">
+        <label for="park-state">State</label>
+        <input type="text" name="park-state" id="js-park-state" value="CA" required>
+
+        <label for="max-results">Maximum results</label>
+        <input type="text" name="max-results" id="js-max-results" value="10" required>
+
+        <input type="submit" value="Find National Parks">
+      </form>
+      
+      <section id="results" class="hidden">
+        <h2>Results</h2>
+        <ul id="js-results-list">
+        </ul>
+      </section>
+
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
