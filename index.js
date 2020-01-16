@@ -3,6 +3,7 @@
 // put your own value below!
 const apiKey = 'zKjHLuiq7nX0z3KIGbLy4GNlTNpD7OLfb7S0oyNQ'; 
 const searchURL = 'https://developer.nps.gov/api/v1/parks';
+let fields = 'images';
 
 
 function formatQueryParams(params) {
@@ -20,24 +21,28 @@ function displayResults(responseJson) {
     //array, add a list item to the results 
     //list with the park title, description,
     //and link
-
+    
     $('#js-results-list').append(
       `<li><h3>${responseJson.data[i].fullName}</h3>
       <p>${responseJson.data[i].description}</p>
       <h4>Directions:</h4>
       <p>${responseJson.data[i].directionsInfo}</p>
+      <img src="${responseJson.data[i].images[0].url}">
       <a href="${responseJson.data[i].url}">Park Website</a>
       </li>`
     )};
   //display the results section  
   $('#results').removeClass('hidden');
+
 };
 
 function getStateParks(query, limit) {
   const params = {
     limit,
-    q: query,
+    stateCode: query,
+    fields: fields,
     api_key: apiKey,
+    
   };
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString;
