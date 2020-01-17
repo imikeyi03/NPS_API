@@ -27,7 +27,7 @@ function displayResults(responseJson) {
       <p>${responseJson.data[i].description}</p>
       <h4>Directions:</h4>
       <p>${responseJson.data[i].directionsInfo}</p>
-      <img src="${responseJson.data[i].images[0].url}">
+      <img src="${responseJson.data[i].images[0].url}" alt="State Park image">
       <a href="${responseJson.data[i].url}" target="_blank">Park Website</a>
       </li>`
     )};
